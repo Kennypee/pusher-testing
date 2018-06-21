@@ -53,7 +53,7 @@ playerData = [
 sendVotes(player){
   this.http.post('http://localhost:4000/vote', { player }).subscribe((res : any) => {
   this.vote = res.player;
-  this.voted = true;
+  this.ifVoted = true;
   })
 }
 getVoteClasses(player){
