@@ -1,0 +1,10 @@
+page-home ion-textarea {
+  border-bottom: 1px solid #000000;
+  margin: 0px 5px; }
+page-home p {
+  text-align: justify; }
+page-home .comment-box {
+  overflow: scroll;
+  height: 220px; }
+
+/*# sourceMappingURL=home.css.map */
