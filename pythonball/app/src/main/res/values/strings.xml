@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">python-ball</string>
-    <string name="channel_name">Polls</string>
-    <string name="channel_description">To receive updates about polls</string>
-</resources>
