@@ -21,11 +21,15 @@ class User extends Authenticatable
 
 public function checkRoles($roles) 
 {
-    if (is_array($roles)) {
-        return $this->hasAnyRole($roles) || abort(404);
+   
+if ( ! is_array($roles)) {
+        $roles = [$roles];    
     }
 
-    return $this->hasRole($roles) || abort(404);
+    if ( ! $this->hasAnyRole($roles)) {
+        auth()->logout();
+        abort(404);
+    }
 }
 
 public function hasAnyRole($roles): bool

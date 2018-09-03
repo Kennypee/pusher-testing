@@ -57,7 +57,7 @@
         
         addComment() {
           let body = this.$refs.body.value;
-          axios.post("/" + this.postID + "/comments", { body }).then(response => {
+          axios.post("/" + this.postId + "/comments", { body }).then(response => {
             this.comments.push({
               user: {name: this.userName},
               body: this.$refs.body.value

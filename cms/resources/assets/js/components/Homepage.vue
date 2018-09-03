@@ -3,8 +3,8 @@
   <div>
     <nav>
       <section>
-        <a style="color: white" href="/">Laravel-CMS</a> &nbsp; ||  &nbsp;
-        <a style="color: white" href="/admin/dashboard">HOME</a>
+        <a style="color: white" href="/admin/dashboard">Laravel-CMS</a> &nbsp; ||  &nbsp;
+        <a style="color: white" href="/">HOME</a>
         <hr>
         <ul>
            <li>
@@ -25,10 +25,6 @@
       </div>
     </article>
   </div>
-
-    
-
-
 </template>
 
 <style scoped>

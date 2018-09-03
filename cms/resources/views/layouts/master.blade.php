@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Neo Ighodaro">
-    
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<script src="{{ asset('js/app.js') }}" defer></script>
     <title>LaravelCMS</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <style> 
@@ -33,6 +30,16 @@
                 <li class="nav-item">
                      <a class="nav-link" href="{{ url('/home') }}">Home</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                    Log out
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                 </li>
                  @else
                  <li class="nav-item">
                      <a class="nav-link" href="{{ route('login') }}">Login</a>

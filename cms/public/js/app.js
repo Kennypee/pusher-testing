@@ -60262,10 +60262,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -60302,18 +60298,18 @@ var render = function() {
   return _c("div", [
     _c("nav", [
       _c("section", [
-        _c("a", { staticStyle: { color: "white" }, attrs: { href: "/" } }, [
-          _vm._v("Laravel-CMS")
-        ]),
-        _vm._v("   ||   \n      "),
         _c(
           "a",
           {
             staticStyle: { color: "white" },
             attrs: { href: "/admin/dashboard" }
           },
-          [_vm._v("HOME")]
+          [_vm._v("Laravel-CMS")]
         ),
+        _vm._v("   ||   \n      "),
+        _c("a", { staticStyle: { color: "white" }, attrs: { href: "/" } }, [
+          _vm._v("HOME")
+        ]),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
@@ -61200,7 +61196,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this3 = this;
 
       var body = this.$refs.body.value;
-      axios.post("/" + this.postID + "/comments", { body: body }).then(function (response) {
+      axios.post("/" + this.postId + "/comments", { body: body }).then(function (response) {
         _this3.comments.push({
           user: { name: _this3.userName },
           body: _this3.$refs.body.value
