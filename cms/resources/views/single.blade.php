@@ -22,12 +22,12 @@
           </div>
           
           @auth
-          <div id="app">
+         
             <Comments
               :post-id='@json($post->id)' 
               :user-name='@json(auth()->user()->name)'>
             </Comments>
-          </div>
+         
           @endauth
         </div>
       </div>

@@ -57,14 +57,14 @@
         </div>
       </div>
     </nav>
-  
+  <div id="app">
     @yield('content')
-
+</div>
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; LaravelCMS 2018</p>
       </div>
     </footer>
-     <script src="{{ asset('js/app.js') }}" defer></script>
+     <script src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>
