@@ -20,7 +20,7 @@ export default {
       this.newTodo.title = "";
     });
     window.Echo.channel("taskRemoved").listen(".task-removed", e => {
-        this.$store.state.toRemove = e.task;
+
         this.$store.commit("DELETE_TODO", this.toRemove);
     });
   },

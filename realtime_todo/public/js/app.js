@@ -58173,10 +58173,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Todo",
   props: ["todo"],
+  computed: {
+    completed: function completed() {
+      return this.todo.completed !== 0;
+    }
+  },
   methods: {
     removeTodo: function removeTodo(todo) {
       this.$store.state.toRemove = todo;
@@ -58195,7 +58201,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "li",
-    { staticClass: "todo", class: { completed: _vm.todo.completed } },
+    { staticClass: "todo", class: { completed: _vm.completed } },
     [
       _c("div", { staticClass: "view" }, [
         _c("input", {
@@ -58203,41 +58209,41 @@ var render = function() {
             {
               name: "model",
               rawName: "v-model",
-              value: _vm.todo.completed,
-              expression: "todo.completed"
+              value: _vm.completed,
+              expression: "completed"
             }
           ],
           staticClass: "toggle",
           attrs: { type: "checkbox" },
           domProps: {
-            checked: Array.isArray(_vm.todo.completed)
-              ? _vm._i(_vm.todo.completed, null) > -1
-              : _vm.todo.completed
+            checked: Array.isArray(_vm.completed)
+              ? _vm._i(_vm.completed, null) > -1
+              : _vm.completed
           },
           on: {
             change: function($event) {
-              var $$a = _vm.todo.completed,
+              var $$a = _vm.completed,
                 $$el = $event.target,
                 $$c = $$el.checked ? true : false
               if (Array.isArray($$a)) {
                 var $$v = null,
                   $$i = _vm._i($$a, $$v)
                 if ($$el.checked) {
-                  $$i < 0 && _vm.$set(_vm.todo, "completed", $$a.concat([$$v]))
+                  $$i < 0 && (_vm.completed = $$a.concat([$$v]))
                 } else {
                   $$i > -1 &&
-                    _vm.$set(
-                      _vm.todo,
-                      "completed",
-                      $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                    )
+                    (_vm.completed = $$a
+                      .slice(0, $$i)
+                      .concat($$a.slice($$i + 1)))
                 }
               } else {
-                _vm.$set(_vm.todo, "completed", $$c)
+                _vm.completed = $$c
               }
             }
           }
         }),
+        _vm._v(" "),
+        _c("label", [_vm._v(_vm._s(_vm.todo.title))]),
         _vm._v(" "),
         _c("button", {
           staticClass: "destroy",
@@ -58481,7 +58487,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       _this.newTodo.title = "";
     });
     window.Echo.channel("taskRemoved").listen(".task-removed", function (e) {
-      _this.$store.state.toRemove = e.task;
+
       _this.$store.commit("DELETE_TODO", _this.toRemove);
     });
   },
